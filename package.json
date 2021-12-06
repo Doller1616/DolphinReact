@@ -8,10 +8,13 @@
     "format": "npx prettier --write"
   },
   "dependencies": {
+    "mdb-react-ui-kit": "^2.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-redux": "^7.2.5",
-    "redux": "^4.1.1"
+    "react-router-dom": "^6.0.2",
+    "redux": "^4.1.1",
+    "redux-saga": "^1.1.3"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.5",

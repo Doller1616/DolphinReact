@@ -1,9 +1,9 @@
 
 import {combineReducers} from 'redux';
-import { SignInSignUp } from './SignInSignUp';
+import DashboardReducers from '@Pages/Dashboard/Reducer'
 
 const rootReducer  = combineReducers({
-    SignInSignUp,
+    ...DashboardReducers
 });
 
 export default rootReducer

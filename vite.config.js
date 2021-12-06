@@ -11,6 +11,7 @@ export default defineConfig({
   reactRefresh(),
   alias({
       entries: [
+        { find: '@Pages', replacement: resolve(__dirname + '/src/Pages') },
         { find: '@Elements', replacement: resolve(__dirname + '/src/Common/Elements') },
         { find: '@Widgets', replacement: resolve(__dirname + '/src/Common/Widgets') },
         { find: '@Redux', replacement: resolve(__dirname + '/src/Redux') },
