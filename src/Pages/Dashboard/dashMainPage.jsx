@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   MDBCarousel,
   MDBCarouselInner,
@@ -7,7 +7,14 @@ import {
   MDBCarouselCaption,
 } from 'mdb-react-ui-kit';
 
-export default function DashMainPage() {
+export default function DashMainPage(props) {
+
+  useEffect(() => {
+
+    props?.fetchData({id:2});
+    
+  }, [])
+
   return (
     <MDBCarousel showIndicators showControls fade>
       <MDBCarouselInner>

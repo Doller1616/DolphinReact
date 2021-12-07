@@ -7,8 +7,8 @@ import rootSaga from './rootSaga'
 const sagaMiddleware = createSagaMiddleware();
 
 // mount it on the Store
-export const store = createStore( rootReducer, applyMiddleware(sagaMiddleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() ); 
+export const store = createStore( rootReducer, compose( applyMiddleware(sagaMiddleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() )); 
 
 // then run the saga
 sagaMiddleware.run(rootSaga);
