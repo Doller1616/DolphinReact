@@ -1,47 +1,33 @@
-import React, { useEffect } from 'react';
-import {
-  MDBCarousel,
-  MDBCarouselInner,
-  MDBCarouselItem,
-  MDBCarouselElement,
-  MDBCarouselCaption,
-} from 'mdb-react-ui-kit';
+import React, { useEffect, Fragment } from 'react';
+import { Outlet, useLocation, Link } from 'react-router-dom'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import Header from '../../Common/Wedgets/header';
+import Badcrumble from '../../Common/Elements/badcrumble';
+import Sidemenu from '../../Common/Wedgets/sidemenu';
 
 export default function DashMainPage(props) {
+  const location = useLocation();
 
   useEffect(() => {
-
-    props?.fetchData({id:2});
-    
+     console.log("state",location?.state);
+     console.log("props",props);
+     props?.fetchData({id:2});
   }, [])
 
   return (
-    <MDBCarousel showIndicators showControls fade>
-      <MDBCarouselInner>
-        <MDBCarouselItem className='active'>
-          <MDBCarouselElement src='https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg' alt='...' />
-          <MDBCarouselCaption>
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </MDBCarouselCaption>
-        </MDBCarouselItem>
-
-        <MDBCarouselItem>
-          <MDBCarouselElement src='https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg' alt='...' />
-          <MDBCarouselCaption>
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </MDBCarouselCaption>
-        </MDBCarouselItem>
-
-        <MDBCarouselItem>
-          <MDBCarouselElement src='https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg' alt='...' />
-          <MDBCarouselCaption>
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </MDBCarouselCaption>
-        </MDBCarouselItem>
-      </MDBCarouselInner>
-    </MDBCarousel>
-  );
+    <>
+     <div className="min-h-full text-sm">
+        {/* Header */}
+        <Header/>
+        
+            <div className="flex overflow-auto" style={{height:'92vh'}}>
+              <Sidemenu/>
+              <div className='flex-auto bg-indigo-300'>
+              <Badcrumble/>
+              <Outlet/>
+              </div>
+            </div>
+      </div>
+  </>);
 }

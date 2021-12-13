@@ -8,7 +8,9 @@
     "format": "npx prettier --write"
   },
   "dependencies": {
-    "mdb-react-ui-kit": "^2.1.0",
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
+    "@tailwindcss/forms": "^0.4.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-redux": "^7.2.5",

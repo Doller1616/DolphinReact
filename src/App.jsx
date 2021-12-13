@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { useRoutes } from 'react-router-dom'
-import InputBox from '@Elements/Inputbox'
-import Dashboard from '@Pages/Dashboard'
+const SignInPage = lazy(()=>import('@Pages/SigninSignup/signinPage')); 
+const DashMainPage = lazy(()=>import('@Pages/Dashboard')); 
+const DashStaticsPage = lazy(()=>import('@Pages/Dashboard/dashStaticsPage')); 
 
 const App = () => {
    
     const routes = useRoutes([
-    { path:'/', element:<Dashboard/>}
+    { path:'/', element: <SignInPage/> },
+    { path:'/dashboard', element: <DashMainPage/>,  children : [
+        { path:':id', element: <DashStaticsPage/> },
+
+      ]}
     ])
     
-    return routes
+    return <Suspense fallback="....LOADING">
+        {routes}
+    </Suspense> 
 }
 
 export default App 
