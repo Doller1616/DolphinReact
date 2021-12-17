@@ -1,15 +1,15 @@
 // Singalton Service Class
 import apiEndPoints from './apiEndPoints';
 class RootService {
-    BASEURL = 'https://reqres.in';
+    #BASEURL = 'https://reqres.in';
     ENDPOINTS = apiEndPoints;
 
     constructor() {
-        this.interceptor();
+        this.#interceptor()
         console.log(">>>>>>>>>>>>>>>> New");
     }
 
-  interceptor = () => {
+  #interceptor = () => {
         const {fetch: origFetch} = window;
         // override fetch
         window.fetch = async (...args) => {
@@ -28,22 +28,22 @@ class RootService {
         };
     }
 
-    _getO = async(end_point, params) =>{
-        const url = new URL(this.BASEURL + end_point);
+    getReq = async(end_point, params) =>{
+        const url = new URL(this.#BASEURL + end_point);
         Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
         return await fetch(url).then(data => data.json());
     }
 
-    _postO = async(end_point, obj) =>{
+    postReq = async(end_point, obj) =>{
         console.log(">>>>>post");
-        return await fetch(this.BASEURL + end_point, {
+        return await fetch(this.#BASEURL + end_point, {
            method: 'POST',
            headers: new Headers({'content-type': 'application/json'}),
            body: JSON.stringify(obj)
         });
     }
 
-    _deleteO = (params) => {
+    deleteReq = (params) => {
         console.log(">>>>>delete");
     }
 }

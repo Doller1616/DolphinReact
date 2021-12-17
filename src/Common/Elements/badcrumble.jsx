@@ -5,7 +5,7 @@ export default function Badcrumble() {
     return (<>
          <header className="p-3 pt-3 px-8 text-white">
           <ul className='flex font-bold'>
-            <li className='hover:text-indigo-600'><Link to='/dashboard'>Dashboard</Link></li>
+            <li className='hover:underline'><Link to='/dashboard'>Dashboard</Link></li>
             <li className='px-2'>/</li>
             <li>Statics</li>
           </ul>
