@@ -1,12 +1,12 @@
-import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 
 import { FETCH_DATA, receiveDataSuccessfully,receiveDataFailed } from "../Action/dashMainAction";
 import { fetchDataServices } from "../Services/dashMainService";
 
 
-function* getApiData(payload) {
+function* getApiData( payload ) {
   try {
-    const data = yield call(fetchDataServices);
+    const data = yield call( fetchDataServices, payload?.data );
     yield put(receiveDataSuccessfully(data)); // dispatch result
   } catch (e) {
     console.log(e);

@@ -1,11 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Badcrumble() {
     return (<>
-         <header className="bg-indigo-200 shadow">
-          <div className="py-4 px-1">
-            <h1 className="text-sm font-bold text-gray-900">Dashboard</h1>
-          </div>
+         <header className="p-3 pt-3 px-8 text-white">
+          <ul className='flex font-bold'>
+            <li className='hover:text-indigo-600'><Link to='/dashboard'>Dashboard</Link></li>
+            <li className='px-2'>/</li>
+            <li>Statics</li>
+          </ul>
+          <p className='font-bold text-2xl mt-2'>Statics</p>
         </header>     
         </>
     )

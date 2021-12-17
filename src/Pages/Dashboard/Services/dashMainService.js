@@ -1,8 +1,9 @@
-export const fetchDataServices = async () => {
+import RootService from "../../../Services/rootService";
+const { _getO, _deleteO, _postO, ENDPOINTS } = RootService;
+
+export const fetchDataServices = async (params) => {
     try {
-        const response = await fetch("https://reqres.in/api/users?page=2");
-        return await response.json();
+        return await _getO( ENDPOINTS.user_list, params );
     } 
     catch (e) { console.log(e) }
-
 }

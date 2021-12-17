@@ -6,3 +6,8 @@ body {
   
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
+
+.sidemenu li {
+    background-color: darkorange;
+    border-top: 1px solid #fff;
+}
