@@ -9,9 +9,7 @@ const App = () => {
     const routes = useRoutes([
     { path:'/', element: <SignInPage/> },
     { path:'/dashboard', element: <DashMainPage/>,  children : [
-        { path:'statics', element: <DashStaticsPage/> },
         { path:':id', element: <DashStaticsPage/> },
-
       ]}
     ]);
     

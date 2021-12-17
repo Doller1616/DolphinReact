@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 export default function Signin() {
 const navigate = useNavigate()
 const onClickSignin = () =>{
-  navigate('/dashboard',{ replace:true, state:{ok:'working....'} });
+  navigate('/dashboard/statics',{ replace:true, state:{ok:'working....'} });
 }
 
     return (<>  

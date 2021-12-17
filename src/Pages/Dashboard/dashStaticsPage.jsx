@@ -2,30 +2,23 @@ import React, { useEffect } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { requestData } from './Action/dashMainAction';
+import Badcrumble from '../../Common/Elements/badcrumble';
 
 function DashStaticsPage(props) {
-    const params = useParams();
-    const location = useLocation();
     const { testCompo = {} } = useSelector((state) => state?.dashMainPage);
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        // console.log("params",params);
-        // console.log("location",location);
-    }, [])
 
     const onClickHitAPI = () => {
         dispatch(requestData({ params: 2 }));
     }
 
-    return (
-        <div className='px-1 py-4'>
+    return (<>
+            <Badcrumble />
+            <div className='px-1 py-4'>
             <button onClick={onClickHitAPI}
                 className='bg-indigo-600 text-white border-green-700 p-3 h-20 w-20
                  rounded-full absolute right-20 top-20'> Hit API </button>
-
             {/* ------------------------------------------------------------------------------------------ */}
-
             <div className="flex flex-col">
                 <div className="-my-2">
                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -130,10 +123,10 @@ function DashStaticsPage(props) {
                     </div>
                 </div>
             </div>
-
-
             {/* ------------------------------------------------------------------------------------------- */}
         </div>
+    </>
+
     )
 }
 
