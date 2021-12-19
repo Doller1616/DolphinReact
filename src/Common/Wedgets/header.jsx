@@ -15,11 +15,11 @@ function classNames(...classes) {
 
 export default function Header() {
   return (
-    <Disclosure as="nav" className="bg-indigo-600 border-b-2 border-white" style={{height:'8vh'}}>
+    <Disclosure as="nav" className="bg-indigo-600 border-b-2 border-white p-1" style={{height:'8vh'}}>
       {({ open }) => (
         <>
           <div className="w-full px-2 sm:px-6 lg:px-8">
-            <div className="relative flex items-center justify-between h-16">
+            <div className="relative flex items-center justify-between">
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <img

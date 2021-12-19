@@ -25,9 +25,9 @@ export default function Sidemenu() {
         
     }, [])
 
-    const toggleBtnCss = 'absolute top-11 w-8 h-8 rounded-full bg-indigo-600 text-white grid place-content-center cursor-pointer border-2 border-white'
+    const toggleBtnCss = 'absolute top-11 w-8 h-8 rounded-full bg-indigo-600 text-white grid place-content-center cursor-pointer border-2 border-white z-10'
     return (
-        <div className='bg-indigo-400 relative border-r-2 border-white break-words z-10' style={containerCss} >
+        <div className='bg-indigo-400 relative border-r-2 border-white break-words' style={containerCss} >
             <span className={toggleBtnCss} style={{ right:'-16px'}}
              onClick={toggleContainer} > {containerCss.content}  </span>
              {/* MENU */}

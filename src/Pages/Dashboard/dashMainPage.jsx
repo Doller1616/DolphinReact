@@ -20,7 +20,7 @@ export default function DashMainPage(props) {
       <div className="min-h-full text-sm">
         {/* Header */}
         <Header />
-        <div className="flex overflow-auto" style={{ height: '92vh' }}>
+        <div className="flex" style={{ height: '92vh' }}>
           <Sidemenu />
           <div className='flex-auto bg-indigo-300 relative overflow-y-auto'>
             <Outlet />
