@@ -8,6 +8,6 @@ body {
 }
 
 .sidemenu li {
-    background-color: darkorange;
+    /* background-color: darkorange; */
     border-top: 1px solid #fff;
 }
