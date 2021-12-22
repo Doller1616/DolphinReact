@@ -22,7 +22,7 @@ export default function DashMainPage(props) {
         <Header />
         <div className="flex" style={{ height: '92vh' }}>
           <Sidemenu />
-          <div className='flex-auto bg-indigo-300 relative overflow-y-auto'>
+          <div className='flex-auto bg-indigo-300 relative overflow-y-auto px-5'>
             <Outlet />
           </div>
         </div>
